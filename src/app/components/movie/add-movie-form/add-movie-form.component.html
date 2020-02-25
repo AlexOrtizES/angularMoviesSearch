@@ -1,0 +1,11 @@
+<h3>Add new movie</h3>
+<div><label>Title</label><input type="text" [(ngModel)]="movieName"></div>
+<br>
+<label>Type</label><select [(ngModel)]="selectionType">
+  <option value="Comedy">Comedy</option>
+  <option value="Terror">Terror</option>
+  <option value="Crime">Crime</option>
+  <option value="Love">Love</option>
+</select>
+<button (click)="addMovie(movieName, selectionType)">Add</button>
+<br>

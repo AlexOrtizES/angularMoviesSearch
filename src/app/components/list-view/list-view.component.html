@@ -1,0 +1,25 @@
+<div class="container" >
+    <div class="row">
+        <div class="col">    
+            <div class="list-group" *ngFor="let theMovie of _movieService.listMovies">
+                <button type="button" class="list-group-item list-group-item-action" (click)="selectMovie(theMovie)">
+                {{theMovie.Title}}
+                </button>
+            </div>
+        </div>
+        
+        <div class="col">
+            <div class="card" style="width: 200px;" *ngIf="selected==true">
+                <img src="{{selectedMovie.Poster}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{selectedMovie.Title}}</h5>
+                    <p class="card-text">{{selectedMovie.imdbID}}:{{selectedMovie.ID}} </p>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="submit" class="btn btn-danger" (click)="remove(selectedMovie)">Remove</button>
+                        <button type="button" class="btn btn-primary" (click)="closeView()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

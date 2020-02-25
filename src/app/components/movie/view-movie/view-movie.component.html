@@ -1,0 +1,29 @@
+
+<div style="margin-left: 50px; margin-right: 50px;width: 350px;">
+<form  [formGroup] = "searchForm" (ngSubmit)="submitSearch()">
+  <h3>Search movie</h3>
+  <div class="form-group">
+    <label for="movieTitleLabel">Movie title</label>
+    <input class="form-control"formControlName="searchTitle" type="text">
+  </div>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="submit" [disabled]='searchForm.invalid' class="btn btn-secondary" >Search</button>
+    <button type="button" [disabled]='searchForm.invalid' class="btn btn-secondary" (click)="clearForm()">Clear</button>
+    <button type="button" class="btn btn-secondary" (click)="viewMovieForm()" *ngIf="newMovie == false">New</button>
+  </div>
+</form>
+<br>
+
+<div class="card" style="width: 200px;" *ngIf="selected == true && newMovie == false">
+  <img src="{{movie.Poster}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{movie.Title}}</h5>
+    <p class="card-text">{{movie.imdbID}}</p>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="submit" class="btn btn-success" (click)="addMovie(movie)">Add</button>
+      <button type="button" class="btn btn-danger" (click)="closeView()">Close</button>
+    </div>
+  </div>
+</div>
+<app-movie-form *ngIf="selected == false && newMovie == true" (viewForm)="viewForm($event)"></app-movie-form>
+</div>

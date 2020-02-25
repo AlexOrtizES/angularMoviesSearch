@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <h3>Add movie</h3>
+  <div>
+    <form [formGroup] = "movieForm" (ngSubmit)="addMovie()">
+        <div class="form-group">
+          <label >Movie Title</label>
+          <input type="text" class="form-control" formControlName="formMovieTitle">
+          <small class="form-text text-muted">The title of the movie</small>
+        </div>
+        <div class="form-group">
+          <label >imdbID</label>
+          <input type="text" class="form-control" formControlName="formMovieId">
+        </div>
+        <div class="form-group form-check">
+        </div>
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          <button type="submit" [disabled]='movieForm.invalid' class="btn btn-success">Add</button>
+          <button type="button" class="btn btn-danger" (click)="closeForm()">Close</button>
+      </div>
+    </form>
+  </div>
+</div>
