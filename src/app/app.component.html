@@ -1,6 +1,22 @@
+<nav class="navbar navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand">My movies</a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" (click)="goToMovies()">Movies</a>
+        </li>
+    </ul>
+    <form class="form-inline">
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item">
+                <app-movie-badge class="nav-link p-2"></app-movie-badge>
+            </li>
+        </ul>      
+    </form>
+</nav>
 <div class="container" style="margin-top:50px; margin-left: 50px; margin-right: 50px;">
+    <!--<router-outlet></router-outlet>-->
     <div class="row justify-content-end">
-        <app-movie-badge></app-movie-badge>
+        <!--<app-movie-badge></app-movie-badge>-->
     </div>
     <div class="row">
         <div class="col" style="margin-top:5px">
@@ -11,4 +27,3 @@
         </div>
     </div>
 </div>
-
